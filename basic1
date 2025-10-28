@@ -71,3 +71,17 @@ abs(-234)
 abs(4.54)
 4.54
 #distance form `0'
+
+
+# Write your code here :-)
+print('whats is your name')
+name = input('>')
+print("hi " + name + ' its good time to meet you')
+print('your name is: ' + str(len(name)) + ' charector longer')
+print('what is your age')
+age = input('>')
+print('you are ' + str(int(age)) + ' now,' + 'you will be ' + str(int(age)+1)  + ' within a year.')
+
+length = len(name)
+print(length)
+print('hello are you ' + str(age) + ' years old')

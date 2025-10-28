@@ -1,0 +1,73 @@
+Operatros = **,%, -, +, *, /, //
+
+check = 'Alice' * 5 #will be 'AliceAliceAliceAliceAlice'
+but can't multipy float and str
+eg.
+check = 'Alice' * 5.0
+
+but 
+check = 'Alice' + 5 # is not possible. int str nerver concatenate int
+
+simlarly 
+'Alice' * 'Bob' # won't work. python can't multiply 2 str's
+
+variable naming
+===============
+special cahr like $,' not permitted
+begin with numbers not permitted
+sapces are not allowed
+hypens are not allowed
+
+can use _ inbetween
+can use uppercase and lowecase
+can use numbers except beginning
+
+int(), str(), float()
+========================
+if want to concatenate 29. must pass the value to str. because line#9. 
+concatenate_methode = 'Hello' + str(29) + 'years old'
+by default input() will take the int value as str
+check = input('enter a number')4
+print (number) # result will be '4'
+in case of addin 2 values, must change to int()
+moreover int('4')will throw an error # it consider as a str not a string
+
+
+42 == 42 # True
+42 == '42' # False
+42 == 42.0 # True
+42 == 0042.8 # True
+
+Type() function
+---------------
+type(23)
+type('dk')
+type(4.2) 
+type(len('hello')) # result will be int. because the resutl len()is a int
+
+routd()
+------
+round(4.4) 
+5
+round (5.2)
+5
+round (-7.2)
+-7 
+#round() accept float value and retrun nearest int value 
+round(7.3333, 2)
+7.33
+round(6.31232132, 3)
+6.312
+round(9.432423, 1)
+9.4
+#2nd value rounding how many int retrun after `.`
+
+abs
+---
+abs(23)
+23
+abs(-234)
+234
+abs(4.54)
+4.54
+#distance form `0'

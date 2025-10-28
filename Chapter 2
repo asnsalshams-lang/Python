@@ -68,3 +68,12 @@ check = 4
 #True
 (20+20) == check and not 1 == 1
 #False
+
+Flow control
+spam = 3
+if spam == 1:
+    print('Helo')
+elif spam == 2:
+    print('Howdy')
+else:
+    print('Greetings!')

@@ -1,0 +1,70 @@
+Boolean values
+==============
+Boolean char [==, !=, >, >=, <, <=]
+
+42 == 42
+#True
+42 == '42'
+#False
+
+42 != 42
+False
+42 != 41
+#True
+
+'Hello' == 'Hello'
+#True
+'Hello' == 'Helo'
+#False
+
+'Hello' != 'Hello'
+#False
+'Hello' != 'Helo'
+#True
+
+42 > 42
+#False
+42 > 34
+#True
+
+42 >= 42
+#True
+42 <= 41
+#False
+
+My_Age = 23
+My_Age >= 23
+#True
+My_Age != 23
+#Fale
+
+Boolean operators
+=================
+[and, or, and not]
+AND
+----
+True  and True    #True
+True  and False   #False
+False and True    #False
+False and False   #False
+
+OR
+--
+True  or True   #True
+True  or False  #True
+Fasle or Treu   #True
+False or False  #False
+
+NOT
+----
+not True    #False
+not False   #True
+
+combine boolean char and operators
+----------------------------------
+
+check = 4
+2 + 2 == check and not 2 + 2 == (check + 1) and 2 * 2 == 2 + 2
+#True
+(20+20) == check and not 1 == 1
+#False

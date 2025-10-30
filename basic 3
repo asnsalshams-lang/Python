@@ -1,0 +1,12 @@
+while loop:
+===========
+
+
+num = 0
+while num < 5:
+    num += 1
+    if num == 3:
+        continue  # Skip the rest when num is 3
+    print(num)
+# continue will stop the process and return to the whil process to start and continue the remaining process.
+# because the the continue works when the while meet a certain condition. at that time it will skip and go back to start of the whil funcion

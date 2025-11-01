@@ -32,3 +32,30 @@ if var is None:
     print('no value') => will print
 elif var is not None:
     print('value')
+
+#Named Parameters#
+-------------------
+/e.g in print
+avoid sperating from from keywords like in line jump
+print('Hello')
+print('World')
+#the output would look like this:#
+Hello
+World
+
+use of Named parameters;
+print('Hello', end='')
+print('World')
+#the output would look like this:#
+HelloWorld
+
+import random
+for i in range (1,100):
+    if  random.randint (0,1) == 0:
+        print('T ', end='')
+    else:
+        print('S ', end= '')
+T S T T S S T T S T T T T T T S S S S S T S T T T T S S T S T S S T T S T T S T T T T T S T S S T T S S T T S T S S S S S S S T S T T T S T T T S S T S T T S S S T T S S T T T T S T S S S S S T S T >>> 
+there is no line jump between if and else printer
+
+

@@ -31,3 +31,72 @@ while num < 5:
     print(num)
 # continue will stop the process and return to the whil process to start and continue the remaining process.
 # because the the continue works when the while meet a certain condition. at that time it will skip and go back to start of the whil funcion
+
+
+
+
+
+#for loop for rock, paper, scissor play#
+import sys, random
+
+print('ROCK, PAPER, SCISSOR')
+
+wins = 0
+losses = 0
+ties = 0
+
+
+while True:
+    print('%s wins, %s losses, %s ties' %(wins, losses, ties))
+    while True:
+       print("enter your move: (r)ock (p)apper (s)cissors or (q)uit")
+       player_move = input('>')
+       if player_move == 'q':
+          sys.exit()
+       else:
+          player_move == 'r' or player_move == 'p' or player_move == 's'
+          break
+    
+    if player_move == 'r':
+        print ('ROCK versus...')
+    elif player_move == 'p':
+        print('PAPER versus...')
+    elif player_move == 's':
+        print('SCISSOR versus...')
+    else:
+        print('there is no move')
+        continue
+        
+    computer_move = random.randint(1,3)
+    if computer_move == 1:
+        computer_move = 'r'
+        print ('ROCK')
+    elif computer_move == 2:
+        computer_move = 'p'
+        print('PAPER')
+    elif computer_move == 3:
+        computer_move = 's'
+        print('SCISSOR')
+        
+    if computer_move == player_move:
+        ties = ties + 1
+        print('tie')
+    elif computer_move == 'r' and player_move == 'p':
+        wins = wins + 1
+        print('won')
+    elif computer_move == 'r' and player_move == 's':
+        losses = losses + 1
+        print('lose')
+    elif computer_move == 'p' and player_move == ('r'):
+        losses = losses + 1
+        print ('lose')
+    elif computer_move == 'p' and player_move == ('s'):
+        wins = wins + 1
+        print ('win')
+    elif computer_move == 's' and player_move == ('r'):
+        wins = wins + 1
+        print ('win')
+    elif computer_move == 's' and player_move == ('p'):
+        losses = losses + 1
+        print('lose')
+        

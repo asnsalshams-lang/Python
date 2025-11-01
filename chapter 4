@@ -1,0 +1,34 @@
+Functions
+
+#with return a arguement#
+import random
+def get_answer(answer_num):
+    if answer_num == 1:
+        return 'ydfes'
+    elif answer_num == 2:
+        return 'by'
+    elif answer_num == 3:
+        return 'great'
+    elif answer_num == 4:
+        return 'close'
+    else:
+        return 'non of'
+
+print(get_answer(random.randint(1,6)))
+  get_answer = calls the function
+  (random.randit(1,6)) = passing the arguement to funciton between 1,6
+  print = print the return the value
+
+None value
+----------
+  None = Null
+  there is no Null now in python. now uses None insted of Null.
+  print(type(None)) => will print "<class 'NoneType'>"
+  print(type(Null)) => will throw the "NameError: name 'Null' is not defined" error
+
+#example#
+var = None 
+if var is None:
+    print('no value') => will print
+elif var is not None:
+    print('value')

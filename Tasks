@@ -47,7 +47,23 @@ while True:
             time.sleep(0.1)
 
 
+#The Collatz Sequence#
+-------------------------
+#check value is int or else#
+number = 0
+def get_value():
+    while True:
+        try:
+            global number
+            number = int(input('>'))
+            return number
+        except ValueError:
+            print('try with int')
+        except NameError:
+            print('try with int')
+number = get_value()
 
+#output generation function#
 def callatz(number):
     if (number % 2 == 0):
         even = number // 2
@@ -57,12 +73,11 @@ def callatz(number):
         odd = (3 * number + 1)
         print (odd, end = ' ')
         return odd
-
-ask = int((input('enter the number>')))
-
-while True:
-    retn = callatz(ask)
-    if retn != 1:
-        ask = retn
+callatz(number)
+#pass the user value to the function#
+while True: 
+    retn = callatz(number)
+    if retn != 1: #if the callatz() couldn't make it to 1 retrunt the value it again assing the retutn value to pass to callatz().
+        number = retn
     else:
         break

@@ -56,6 +56,29 @@ for i in range (1,100):
     else:
         print('S ', end= '')
 T S T T S S T T S T T T T T T S S S S S T S T T T T S S T S T S S T T S T T S T T T T T S T S S T T S S T T S T S S S S S S S T S T T T S T T T S S T S T T S S S T T S S T T T T S T S S S S S T S T >>> 
-there is no line jump between if and else printer
+there is no line jump between if and else printers
 
+#Local and Global scope#
+------------------------
+def spam():
+    global eggs
+    print (eggs)  # Prints the global eggs 'Global'
+    eggs = 'spam'  # Changing the Global variable 'Global' to 'spam'
+    
+def bacon():
+    eggs = 'bacon'  # This is a local variable.
+    print(eggs) #will  print 'bacon'. no global variable assign
+
+def ham():
+    global eggs
+    eggs = 'ham changed global'
+    print(eggs)  # This is the global variable. Because the ham hasn't assign any value as eggs its local yet.
+
+eggs = 'global'  # This is the global variable.
+spam()
+print(eggs) # Prints the global value #result will be 'spam'
+ham()
+print(eggs)
+
+#final takeaway, when a global variable changed from local, the global variable value will change forever.#
 

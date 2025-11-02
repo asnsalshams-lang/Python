@@ -21,7 +21,7 @@ print(get_answer(random.randint(1,6)))
 
 None value
 ----------
-  None = Null
+  None == Null
   there is no Null now in python. now uses None insted of Null.
   print(type(None)) => will print "<class 'NoneType'>"
   print(type(Null)) => will throw the "NameError: name 'Null' is not defined" error

@@ -45,3 +45,24 @@ while True:
             for i in range(7, 1, -1):
             print('-' * (i * i))
             time.sleep(0.1)
+
+
+
+def callatz(number):
+    if (number % 2 == 0):
+        even = number // 2
+        print (even, end = ' ')
+        return even
+    else:
+        odd = (3 * number + 1)
+        print (odd, end = ' ')
+        return odd
+
+ask = int((input('enter the number>')))
+
+while True:
+    retn = callatz(ask)
+    if retn != 1:
+        ask = retn
+    else:
+        break

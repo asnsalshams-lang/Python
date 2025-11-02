@@ -81,3 +81,48 @@ while True:
         number = retn
     else:
         break
+
+
+
+#password strength checker#
+---------------------------
+
+#password strength checker#
+import re
+
+def enter():
+    while True:
+        password = input('enter the password: ')
+        lengthchecker = len(password)
+        if (lengthchecker >= 10):
+                def nm():
+                    while True:#number check
+                        digits_only_string = ''.join(filter(str.isdigit, password))
+                        number = int(digits_only_string)
+                        typer = (type(number))
+                        if typer == int: 
+                            print('number ok')
+                            break
+                        else:
+                            break
+                def sp():
+                    while True:#special cahr#
+                        special_char_pattern = re.compile(r'[^\w\s]')
+                        if special_char_pattern.search(password):
+                            print('special ok')
+                            break
+                        else:
+                            break
+                nm()
+                sp()
+                return 'password is strong'
+        else:
+            print('no way')
+            
+
+password = enter()
+def strength():
+    print (password)
+
+print(strength())
+    

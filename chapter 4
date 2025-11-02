@@ -31,7 +31,7 @@ var = None
 if var is None:
     print('no value') => will print
 elif var is not None:
-    print('value')
+    print('print var value')
 
 #Named Parameters#
 -------------------

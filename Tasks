@@ -1,0 +1,47 @@
+Zigzag
+======
+#My_way#
+--------
+method 1 -:
+while True:
+    def spaceloop():
+        for i in range(20):
+            leading_spaces = ' ' * i
+            print(leading_spaces + '***********')
+    spaceloop()
+    def backloop():
+        for i in range(20, -1, -1):
+            leading_spaces = ' ' * i
+            print(leading_spaces + '***********')
+    backloop()
+
+method2-:
+import sys
+while True:
+    try:
+        for i in range(1,8):
+            print(' ' * (i + 1)+ '********')
+        for i in range(8,1,-1):
+            print(' ' * (i - 1) + '********')
+    except:
+        sys.exit()
+
+Spik
+====
+My_way
+------
+while True:
+    def spaceloop():
+        for i in range(0, 48, 8):
+            leading_spaces = '-' * i
+            print(leading_spaces)
+    spaceloop()
+    def backloop():
+        for i in range(48, 1, -8):
+            leading_spaces = '-' * i
+            print(leading_spaces)
+    backloop()
+    
+            for i in range(7, 1, -1):
+            print('-' * (i * i))
+            time.sleep(0.1)

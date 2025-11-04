@@ -1,0 +1,35 @@
+Array[]
+======
+
+spam = ['cat', 'is', 'walking'] # define a array called spam
+spam # prints the spam array's values ['cat', 'is', 'walking']
+spam [1] #prints the 1st index 'is'
+spam [-1] #prints the 1st index from last 'waling'
+
+slices
+------
+  spam # ['cat', 'is', 'walking', 'and', 'man, 'is', 'running']
+spam [1:] # prints ['is', 'walking', 'and', 'man', 'is', 'running']
+spam [:2] # prints ['cat', 'is']
+spam [0:3] # prints ['cat', 'is', 'walking']
+spam [0:-2] # prints ['cat', 'is', 'walking', 'and', 'man']
+
+multiple lists
+--------------
+spam = [['this', 'is', 'first'], ['it', 'will', 'be', 'seccond']]
+spam [0][2] # prints 'first'
+spam [1][1] # prints 'will'
+
+concatenate and replace values
+------------------------------
+spam = spam + 'and', 'man, 'is', 'running' #add value to spam, not an overwrite, its adding extra vlues
+spam # ['cat', 'is', 'walking', 'and', 'man', 'is', 'running']
+spam [0] = 'tiger' # replace cat with tiger
+spam # ['tiger', 'is', 'walking', 'and', 'man', 'is', 'running']
+spam [-3] = spam[0] # prints ['tiger', 'is', 'walking', 'and', 'tiger', 'is', 'running']
+
+delete and length
+-----------------
+spam = ['cat', 'is', 'walking', 'and', 'man', 'is', 'running']
+len(spam) # prints total value count or lenght like the string size '7'
+del spam [3] # will delete the 3rd index vlaue. will pirnts 'spam = ['cat', 'is', 'walking', 'man', 'is', 'running']'

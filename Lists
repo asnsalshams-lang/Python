@@ -98,3 +98,24 @@ index number 2 is  b-y
 index number 3 is  c-x
 index number 4 is  d-w
 ####
+
+random shuffle & choice
+-----------------------
+import random
+
+ch = ['a', 'b', 'c', 'd']
+random.choice(ch)
+#a or b or c or d -> resutl will be any of them
+random.shuffle(ch)
+print (ch)
+# ['c', 'b', 'a', 'd']
+
+operators
+---------
+general => h = 10 | h += 10  -> h = 20, h -= 2 =-> h = 18
+st = ['hei', 'worl', 'do', 'you']
+st *= 3 
+['hei', 'worl', 'do', 'you', 'hei', 'worl', 'do', 'you', 'hei', 'worl', 'do', 'you']
+
+in = [
+

@@ -34,8 +34,8 @@ spam = ['cat', 'is', 'walking', 'and', 'man', 'is', 'running']
 len(spam) # prints total value count or lenght like the string size '7'
 del spam [3] # will delete the 3rd index vlaue. will pirnts 'spam = ['cat', 'is', 'walking', 'man', 'is', 'running']'
 
-Basic Task
-----------
+Basic Task (print position number and value)
+--------------------------------------------
 cat_names = []
 while True:
     print('Enter the name of cat ' + str(len(cat_names) + 1) +
@@ -49,3 +49,19 @@ while True:
 print('The cat names are:')
 for name in cat_names:
     print('  ' + name)
+
+
+print positino and value in for(loop):
+---------------------------------------
+arr = [10, 20, 30, 40, 50]
+element = 40
+idx = -1
+
+for i in range(len(arr)):
+    print(str(i))
+    if arr[i] == element:
+        print ('idx is ' + str(element) +' element is ' + str(arr[i]) + ', and position of element is ' + str(i))
+        idx = i
+        break
+
+print(idx)

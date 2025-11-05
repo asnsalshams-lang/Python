@@ -63,5 +63,38 @@ for i in range(len(arr)):
         print ('idx is ' + str(element) +' element is ' + str(arr[i]) + ', and position of element is ' + str(i))
         idx = i
         break
-
 print(idx)
+
+in and not in Operators
+---------------------------
+pet_name = ['a', 'b', 'c', 'd']
+
+inp = input ('enter the name: ')
+if inp in pet_name:
+    print ('i have ', inp, 'named pet')
+else:
+    print('i dont have ' , inp , 'named pet')
+
+--------or-------
+
+pet_name = ['a', 'b', 'c', 'd']
+
+inp = input ('enter the name: ')
+if inp not in pet_name:
+    print ('i dont have ', inp, 'named pet')
+else:
+    print('i have ' , inp , 'named pet')
+
+List Item Enumeration (list with position)
+------------------------------------------
+pet_name = ['a-z', 'b-y', 'c-x', 'd-w']
+
+for index, item in enumerate(pet_name):
+    print('index number ' + str(index+1) +  ' is ', (item))
+
+###result will be:###
+index number 1 is  a-z
+index number 2 is  b-y
+index number 3 is  c-x
+index number 4 is  d-w
+####

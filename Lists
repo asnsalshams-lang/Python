@@ -33,3 +33,19 @@ delete and length
 spam = ['cat', 'is', 'walking', 'and', 'man', 'is', 'running']
 len(spam) # prints total value count or lenght like the string size '7'
 del spam [3] # will delete the 3rd index vlaue. will pirnts 'spam = ['cat', 'is', 'walking', 'man', 'is', 'running']'
+
+Basic Task
+----------
+cat_names = []
+while True:
+    print('Enter the name of cat ' + str(len(cat_names) + 1) +
+      ' (Or enter nothing to stop.):')
+    name = input()
+    if name == '':
+        break
+    cat_names = cat_names + [name]  # List concatenation
+    if len(cat_names) == 5:
+        break
+print('The cat names are:')
+for name in cat_names:
+    print('  ' + name)

@@ -115,5 +115,55 @@ st = ['hei', 'worl', 'do', 'you']
 st *= 3 
 ['hei', 'worl', 'do', 'you', 'hei', 'worl', 'do', 'you', 'hei', 'worl', 'do', 'you']
 
-in = [
+in = [1,2,3,4]
+in *= 2
+#prints 1,2,3,4,1,2,3,4,1,2,3,4
+
+methods
+=======
+List values have multiple methods like index, append, insert, remove, etc.. 'it only work on Lists, not to other types'
+
+add value (append and insert)
+-----------------------------
+test = ['a', 'b', 'c', 'd']
+test.append('k') => ['a', 'b', 'c', 'd', 'k'] 'append the value to end fo the list.'
+test.insert(2, 's') => ['a', 'b', 's', 'c', 'd', 'k'] ' append the value to 2nd index in list.'
+
+Find value
+----------
+test = ['a', 'b', 'c', 'd']
+test.index('b') => 1 . 'will print the index postion of the vlaue in list. if the value  in multiple times, will retrun only the first value in list'
+
+remove
+------
+test = ['a', 'b', 'c', 'd']
+test.remove('b') => 'will remove the 'b' from the list. if multiple 'b's in list, only delet the first value.' 
+
+sort
+----
+#[A-Z, 0-9]#
+spam = ['Ants', 'Cats', 'Dogs', 'Badgers', 'Elephants']
+spam.sort() => '['Ants', 'Badgers', 'Cats', 'Dogs', 'Elephants']'
+
+number = [2, 5, 3.14, 1, -7]
+number.sort() => [-7, 1, 2, 3.14, 5]
+
+# [Z-A, 9-0] #
+spam = ['Ants', 'Cats', 'Dogs', 'Badgers', 'Elephants']
+spam.sort(reverse = True) => ['you', 'how', 'how', 'helo', 'hai', 'are']
+
+number = [2, 5, 3.14, 1, -7]
+number.sort(reverse = True) => [5, 3.14, 2, 1, -7]
+
+#rule#
+spam = ['Alice', 'ants', 'Bob', 'badgers', 'Carol', 'cats']
+spam.sort() => will return '['Alice', 'Bob', 'Carol', 'ants', 'badgers', 'cats']' sort the caps values first.
+
+spam = ['a', 'z', 'A', 'Z']
+spam.sort(key=str.lower) => ['a', 'A', 'z', 'Z'] 'will sort the values in aA - zZ values'
+
+reverse the list indexes
+----------------------
+spam = ['cat', 'dog', 'moose']
+spam.reverse() => # ['moose', 'dog', 'cat']
 

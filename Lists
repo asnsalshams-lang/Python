@@ -44,8 +44,6 @@ while True:
     if name == '':
         break
     cat_names = cat_names + [name]  # List concatenation
-    if len(cat_names) == 5:
-        break
 print('The cat names are:')
 for name in cat_names:
     print('  ' + name)

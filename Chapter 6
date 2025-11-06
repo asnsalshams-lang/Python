@@ -161,7 +161,7 @@ spam = ['Alice', 'ants', 'Bob', 'badgers', 'Carol', 'cats']
 spam.sort() => will return '['Alice', 'Bob', 'Carol', 'ants', 'badgers', 'cats']' sort the caps values first.
 
 spam = ['a', 'z', 'A', 'Z']
-spam.sort(key=str.lower) => ['a', 'A', 'z', 'Z'] 'will sort the values in aA - zZ values'
+spam.sort(key=str.lower) => ['a', 'A', 'z', 'Z'] 'sort coverts to lower char everything'
 
 reverse the list indexes
 ----------------------

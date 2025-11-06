@@ -170,3 +170,50 @@ reverse the list indexes
 spam = ['cat', 'dog', 'moose']
 spam.reverse() => # ['moose', 'dog', 'cat']
 
+
+Sequences
+=========
+List type => can add, remove or edit the indexes.
+Tuple => value always constant. not possible to add, remove, edit.
+
+E.g
+# Tuple #
+---------
+tupe = ('hel', 'tue', 2, True)
+spam = tupe
+print(tupe)
+print(spam)
+print('2nd')
+spam [1] = 'baii'
+print(tupe)
+print(spam)
+
+# Reuslt #
+
+('hel', 'tue', 2, True)
+('hel', 'tue', 2, True)
+2nd
+Traceback (most recent call last):
+  File "c:\users\nidal\mu_code\retr.py", line 6, in <module>
+    spam [1] = 'baii'
+TypeError: 'tuple' object does not support item assignment
+
+
+
+# List #
+---------
+st = ['hel', 'tue', 2, True]
+spam = st
+print(st)
+print(spam)
+print('2nd')
+spam [1] = 'baii'
+print(st)
+print(spam)
+
+# Result #
+['hel', 'tue', 2, True]
+['hel', 'tue', 2, True]
+2nd
+['hel', 'baii', 2, True]
+['hel', 'baii', 2, True]

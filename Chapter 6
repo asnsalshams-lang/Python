@@ -128,7 +128,7 @@ add value (append and insert)
 -----------------------------
 test = ['a', 'b', 'c', 'd']
 test.append('k') => ['a', 'b', 'c', 'd', 'k'] 'append the value to end fo the list.'
-test.insert(2, 's') => ['a', 'b', 's', 'c', 'd', 'k'] ' append the value to 2nd index in list.'
+test.insert(2, 's') => ['a', 'b', 's', 'c', 'd', 'k'] ' insert the value to in a specific index in list.'
 
 Find value
 ----------

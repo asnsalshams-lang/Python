@@ -8,7 +8,7 @@ spam [-1] #prints the 1st index from last 'waling'
 
 slices
 ------
-  spam # ['cat', 'is', 'walking', 'and', 'man, 'is', 'running']
+spam = ['cat', 'is', 'walking', 'and', 'man, 'is', 'running']
 spam [1:] # prints ['is', 'walking', 'and', 'man', 'is', 'running']
 spam [:2] # prints ['cat', 'is']
 spam [0:3] # prints ['cat', 'is', 'walking']

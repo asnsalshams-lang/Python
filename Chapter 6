@@ -1,7 +1,7 @@
 Array[]
 ======
 
-# Common sequence dataType[Tuple, List, Range] #
+# Common sequence dataType[Tuple, List, Range, Dictionary] #
 
 spam = ['cat', 'is', 'walking'] # define a array called spam
 spam # prints the spam array's values ['cat', 'is', 'walking']

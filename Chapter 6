@@ -89,6 +89,7 @@ pet_name = ['a-z', 'b-y', 'c-x', 'd-w']
 
 for index, item in enumerate(pet_name):
     print('index number ' + str(index+1) +  ' is ', (item))
+#index, and item are the resut which from the enumarate, enumarate take two results. one is index and another is the value#
 
 ###result will be:###
 index number 1 is  a-z

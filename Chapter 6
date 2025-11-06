@@ -1,6 +1,8 @@
 Array[]
 ======
 
+# Common sequence dataType[Tuple, List, Range] #
+
 spam = ['cat', 'is', 'walking'] # define a array called spam
 spam # prints the spam array's values ['cat', 'is', 'walking']
 spam [1] #prints the 1st index 'is'

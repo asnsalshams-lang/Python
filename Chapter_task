@@ -1,0 +1,30 @@
+Head or Tail
+============
+import random
+streak = []
+for experiment_number in range(1000):
+    random_number = []
+    for i in range(0, 99):
+        random_number.append(random.randint(0,1))
+        print(random_number)
+        store = []
+        for j in random_number[-6:]:
+            store.append(j)
+            #if random_number [-5:-1] == 0
+            #print(j)
+        print(store)
+        z = [0]
+        o = [1]
+        o *= 6
+        z *= 6
+        if store == z:
+            print('gaot 1')
+            streak.append(1)
+            break
+        if store == o:
+            print('goat 0')
+            streak.append(1)
+            break
+print(streak)
+number_of_streak = len(streak)
+print('Chance of streak: %s%%' % (number_of_streak / 100))

@@ -18,3 +18,51 @@ while True:
         update = input('please enter the birthday of '+ name + ': ')
         birthday [name] = update
         print(birthday)
+
+Returning Keys and Values
+=========================
+for
+---
+spam = {'color': 'red', 'age': 42}
+for v in spam.values():
+   print(v)
+#result#
+red
+42
+
+keys, values, items
+--------------------
+spam = {'color': 'red', 'age': 42}
+'color' in spam.keys()
+True
+'age' not in spam.keys()
+False
+'red' in spam.values()
+True
+for i in spam.items():
+  print(i)
+#result#
+('color', 'red')
+('age', 42)
+
+converts the dictionary to items
+-------------------------------
+spam = {'color': 'red', 'age': '42'}
+for k,v in spam.items():
+    kl = list(k)
+    vl = list(v)
+print(type(kl))
+print(type(vl))
+#result#
+<class 'list'>
+<class 'list'>
+
+"can't use list as a key. but can do tuple data, it always constant"
+--------------------------------------------------------------
+grades = {
+    ('Alice', 'Math'): 85,
+    ('Alice', 'Science'): 92,
+    ('Bob', 'Math'): 78,
+    ('Bob', 'Science'): 88
+}
+print(grades['Alice', 'Science'])

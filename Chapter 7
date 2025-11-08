@@ -3,3 +3,18 @@ Dictionary
 my_cat = {'size': 'fat', 'color': 'gray', 'age': 17} # {'size': 'fat', 'color': 'gray', 'age': 17}
 my_cat['size'] # gray
 my_cat['eyes'] = 'brown' # add eyes:brown to my_cat as new entry
+
+birthday = {'a': 17, 'b': 5, 'c': 23}
+while True:
+    name = input('eneter name: ')
+    if name == '':
+        print('by')
+        break
+        
+    if name in birthday:
+        print(birthday[name], 'is the birthday of', name)
+    else:
+        print('sorry i dont know his/her birthday')
+        update = input('please enter the birthday of '+ name + ': ')
+        birthday [name] = update
+        print(birthday)

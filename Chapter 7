@@ -66,3 +66,34 @@ grades = {
     ('Bob', 'Science'): 88
 }
 print(grades['Alice', 'Science'])
+
+setdefault value
+================
+checking key exist in dictionary
+-------------------------------
+picnic_items = {'apples': 5, 'cups': 2}
+print('I am bringing ' + str(picnic_items.get('cups', 0)) + ' cups.')
+#'I am bringing 2 cups.'#
+print('I am bringing ' + str(picnic_items.get('eggs', 0)) + ' eggs.')
+#'I am bringing 0 eggs.'#
+
+default value for a key
+-----------------------
+"can set default value of a key. once set the default key can't change to another default value. but we can change the value."
+spam = {'name': 'Pooka', 'age': 5}
+spam.setdefault('color','black')
+#{'name': 'Pooka', 'age': 5, 'color': 'black'}#
+spam.setdefault('color', 'white')
+#{'name': 'Pooka', 'age': 5, 'color': 'black'}#
+spam['color'] = 'white'
+#{'name': 'Pooka', 'age': 5, 'color': 'white'}#
+
+count key vlaue in charecters
+-----------------------------
+message = "It was a bright cold day in April, and the clocks were striking thirteen."
+count = {} #stores as dictionary
+for charector in message:
+    count.setdefault(charector, 0) #if charector is not exist in count, will create with value 0. if exist skip this line
+    count[charector] = count[charector] + 1 #if the key assigned or exist in count, increase the value +1
+print(count)
+

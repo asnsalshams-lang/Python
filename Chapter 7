@@ -1,0 +1,5 @@
+Dictionary
+==========
+my_cat = {'size': 'fat', 'color': 'gray', 'age': 17} # {'size': 'fat', 'color': 'gray', 'age': 17}
+my_cat['size'] # gray
+my_cat['eyes'] = 'brown' # add eyes:brown to my_cat as new entry

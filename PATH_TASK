@@ -1,0 +1,17 @@
+Guess open ports
+================
+import random
+
+def port_checker(start_port, end_port):
+    open_port = []
+    for user_range in range(start_port, end_port):
+        port = user_range
+        computer_guess = random.randint(0,7)
+        user_checker = port % 2
+        if user_checker == computer_guess:
+            open_port.append(port)
+    return open_port        
+start_port = int(input('start port:'))
+end_port   = int(input('endport:'))    
+port_check_caller = port_checker(start_port, end_port)
+print('open ports' , port_check_caller)

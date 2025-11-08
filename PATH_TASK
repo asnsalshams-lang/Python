@@ -15,3 +15,47 @@ start_port = int(input('start port:'))
 end_port   = int(input('endport:'))    
 port_check_caller = port_checker(start_port, end_port)
 print('open ports' , port_check_caller)
+
+Password Manager
+================
+import pickle
+import sys
+
+while True:
+    password_man = {
+        'x': {
+                'username':'kay',
+                'password':'pass'
+                        },
+        'facebook':{
+                'username': 'jay',
+                'password': '1234'
+                        },
+                }
+    check = input ('enter the website or q for quit: ')
+    if check in password_man:
+        print('website:',(check),'\nusername:',password_man[check]['username'],'\npassword:',password_man[check]['password'])
+    elif check == 'exit':
+        print('bye')
+        sys.exit()
+    else:
+        print('"there is no stored password for this website. \n would you like to store the username and password as new entry to the password manager for this website"')
+        YN = input('Y/N: ')
+        if (YN == 'Y') or (YN == 'y'):
+            user = input('enter username: ')
+            pas = input('password: ')
+            password_man [(check)] = {'username':user, 'password':pas}
+            print('successfully stored', password_man[(check)], 'for ' , check)
+            
+            file_path = "my_data.pkl"
+            
+            with open(file_path, 'wb') as f:
+                pickle.dump(password_man, f)
+
+                print(f"Dictionary saved to {file_path}")
+        else:
+            final = input('would you like to do an another entry: y/n> ')
+            if final == 'N' or 'n':
+                sys.exit()
+            else:
+                break

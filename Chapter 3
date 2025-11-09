@@ -5,7 +5,6 @@ while True:
         num + 1        
         num = num + 1
         print('line number = ' + str(num) )
-        num = num + 1
 
 the execution never stop until manually exit. because True always True. while loop always execute the program, because every time it checks the while condition, it set as True.
 
@@ -16,7 +15,6 @@ while True:
         num + 1        
         num = num + 1
         print('line number = ' + str(num) )
-        num = num + 1
         break
         print('end')
 #whil stops the process. because the break will end the function. if the while process meets a certain contition it will stop the process and will exit from the loop.
@@ -27,17 +25,12 @@ num = 0
 while num < 5:
     num += 1
     if num == 3:
-        continue  # Skip the rest when num is 3
+        continue  # Skip the result when num is 3
     print(num)
 # continue will stop the process and return to the whil process to start and continue the remaining process.
-# because the the continue works when the while meet a certain condition. at that time it will skip and go back to start of the whil funcion
-
-
-
-
+# because the continue works when the while meet a certain condition. at that time it will skip and go back to start of the while funcion
 
 import random, sys
-
 print('ROCK, PAPER, SCISSORS')
 
 # These variables keep track of the number of wins, losses, and ties.

@@ -70,3 +70,64 @@ user = input ('username:')
 passw = input ('pass:')
 access[(user,passw)]
 print(access[(user, passw)])
+
+
+Weekend task 1:
+================
+import random
+import pickle
+
+stat = {
+    'attempt' : 0,
+    'win' : 0,
+    'lose' : 0
+}
+
+def uservalue():
+    try:
+        number = int(input('enter a number:'))
+        return number
+    except ValueError:
+        print('try a number')
+    except:
+        sys.exit()
+
+def validate():
+    sysinp = random.randint(1,10)
+    left = []
+    for i in range(0,5):
+        userinp = uservalue()
+        left.append(i)
+        len_left = 5 - len(left)
+        print(len_left, 'chance left')
+        if (sysinp==userinp):
+            print('correct')
+            return True
+    return False
+
+def store(val):
+    print(val)  
+    if val == True:
+        stat['attempt'] = stat['attempt']+1
+        stat['win'] = stat ['win'] + 1
+    else:
+        stat['attempt'] = stat['attempt']+1
+        stat['lose'] = stat['lose']+1
+        
+def save(stat):
+    
+        file_path = "my_datas.pkl"
+        with open(file_path, 'wb') as f:
+            pickle.dump(stat, f)
+            print(f"Dictionary saved to {file_path}")
+
+while True:
+    try:
+        val = validate()
+        result = store(val)
+        print(stat)
+        print('hel')
+        save(stat)
+    except:
+        ('while error, check root')
+    

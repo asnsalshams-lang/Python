@@ -15,9 +15,9 @@ def get_answer(answer_num):
         return 'non of'
 
 print(get_answer(random.randint(1,6)))
-  get_answer = calls the function
-  (random.randit(1,6)) = passing the arguement to funciton between 1,6
-  print = print the return the value
+  #get_answer = calls the function
+  #(random.randit(1,6)) = passing the arguement to funciton between 1,6
+  #print = print the return the value
 
 None value
 ----------

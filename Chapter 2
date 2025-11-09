@@ -40,7 +40,7 @@ My_Age != 23
 
 Boolean operators
 =================
-[and, or, and not]
+['and', 'or', and 'not']
 AND
 ----
 True  and True    #True
@@ -65,7 +65,6 @@ print(not(6 in list)) #True
 
 x = 10
 print (not (x < 5)) #False
-False
 
 combine boolean char and operators
 ----------------------------------

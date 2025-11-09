@@ -1,0 +1,13 @@
+stats {'status':
+'attempt':''
+wins:'',
+'lose':''
+}
+	
+
+parent - while True: system input
+               userattempt = ''
+               while userattempt <=5 : if input(usernumber) validate(), else: sys.exit()
+validate(usernumber) => try with int. if userinput==sysinput store(True) else: userattempt + 1 continue(5) , break store(False) , catch for non-int
+store in stat{}. store(try result from validator): attempt + 1. if true:  win + 1, else: lose + 1 
+print(stat)

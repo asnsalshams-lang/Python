@@ -105,10 +105,15 @@ password_man = {
     'facebook':{
             'username': 'jay',
             'password': '1234'
-                    }
+                    },
+     123: {
+            'username': 'tyr',
+            'password': 'ps23'
+     }
                     }
 print(password_man) #prints the password_man{}
 print(password_man['x']) # prints the x's keys and values.
+print(password_man[123]) # prints the 123's keys and values.
 print(password_man['x']['password']) # prints x's password only
 
 

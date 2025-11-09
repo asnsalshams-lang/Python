@@ -1,3 +1,5 @@
+Leap Year!
+===========
 def is_leap(year):
     leap = False
     
@@ -11,3 +13,19 @@ def is_leap(year):
 
 year = int(input())
 print(is_leap(year))
+
+Find the Runner-Up Score! 
+=========================
+
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+store = list(arr)
+
+store.append
+max_val = max(store)
+remv = list(dict.fromkeys(store))
+remv.remove(max(store))
+max_val2 =max(remv)
+
+

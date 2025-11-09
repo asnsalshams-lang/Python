@@ -10,8 +10,6 @@ for experiment_number in range(1000):
         store = []
         for j in random_number[-6:]:
             store.append(j)
-            #if random_number [-5:-1] == 0
-            #print(j)
         print(store)
         z = [0]
         o = [1]

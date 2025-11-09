@@ -6,7 +6,7 @@ eg.
 check = 'Alice' * 5.0
 
 but 
-check = 'Alice' + 5 # is not possible. int str nerver concatenate int
+check = 'Alice' + 5 # not possible. str nerver concatenate int
 
 simlarly 
 'Alice' * 'Bob' # won't work. python can't multiply 2 str's
@@ -16,19 +16,19 @@ variable naming
 special cahr like $,' not permitted
 begin with numbers not permitted
 sapces are not allowed
-hypens are not allowed
+hyphens are not allowed
 
 can use _ inbetween
 can use uppercase and lowecase
-can use numbers except beginning
+can use numbers except in the beginning
 
 int(), str(), float()
 ========================
-if want to concatenate 29. must pass the value to str. because line#9. 
+if want to concatenate 29. must pass the value as str. 
 concatenate_methode = 'Hello' + str(29) + 'years old'
 by default input() will take the int value as str
 check = input('enter a number')4
-print (number) # result will be '4'
+print (type(check)) # result will be <clsass 'str'>
 in case of addin 2 values, must change to int()
 moreover int('4')will throw an error # it consider as a str not a string
 
@@ -45,7 +45,7 @@ type('dk')
 type(4.2) 
 type(len('hello')) # result will be int. because the resutl len()is a int
 
-routd()
+round()
 ------
 round(4.4) 
 5

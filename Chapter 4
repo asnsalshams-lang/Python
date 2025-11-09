@@ -36,7 +36,7 @@ elif var is not None:
 #Named Parameters#
 -------------------
 /e.g in print
-avoid sperating from from keywords like in line jump
+avoid sperating from keywords like in line jump
 print('Hello')
 print('World')
 #the output would look like this:#
@@ -60,6 +60,7 @@ there is no line jump between if and else printers
 
 #Local and Global scope#
 ------------------------
+#program-1#
 def spam():
     global eggs
     print (eggs)  # Prints the global eggs 'Global'
@@ -74,12 +75,11 @@ def ham():
     eggs = 'ham changed global'
     print(eggs)  # This is the global variable. Because the ham hasn't assign any value as eggs its local yet.
 
-eggs = 'global'  # This is the global variable.
+eggs = 'global'  # This is the global variable.(declaration)
 spam()
 print(eggs) # Prints the global value #result will be 'spam'
 ham()
 print(eggs)
-
 #final takeaway, when a global variable changed from local, the global variable value will change forever.#
 
 
@@ -111,7 +111,7 @@ print(deviation(43))    # 1.069767441860465
 print(deviation(0))     # result will be like Error: Invalid argument.
 print(deviation(15))    # 3.066666666666667
 
-//if the try went to except because of an error it won't go back to the try clause again. it will continue move.//
+//if the try went to except it won't go back to the try clause again or crash the programe. it will continue move.//
 e.g.
 ----
 def spam(divide_by):

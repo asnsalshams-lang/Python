@@ -59,3 +59,14 @@ while True:
                 sys.exit()
             else:
                 break
+
+Access account with tuple()
+---------------------------
+access = {
+    ('john', 'pass123'): 'account_info',
+    ('mary', 'pass456'): 'other_info'
+}
+user = input ('username:')
+passw = input ('pass:')
+access[(user,passw)]
+print(access[(user, passw)])

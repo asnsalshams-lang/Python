@@ -111,7 +111,7 @@ print(deviation(43))    # 1.069767441860465
 print(deviation(0))     # result will be like Error: Invalid argument.
 print(deviation(15))    # 3.066666666666667
 
-//if the try went to except it won't go back to the try clause again or crash the programe. it will continue move.//
+//if the try went to except it won't go back to the try clause again or crash the programe. it will exit try and continue move to next task.//
 e.g.
 ----
 def spam(divide_by):

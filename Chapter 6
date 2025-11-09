@@ -24,6 +24,7 @@ spam [1][1] # prints 'will'
 
 concatenate and replace values
 ------------------------------
+spam = ['cat', 'is', 'walking']
 spam = spam + 'and', 'man, 'is', 'running' #add value to spam, not an overwrite, its adding extra vlues
 spam # ['cat', 'is', 'walking', 'and', 'man', 'is', 'running']
 spam [0] = 'tiger' # replace cat with tiger
@@ -40,8 +41,7 @@ Basic Task (print position number and value)
 --------------------------------------------
 cat_names = []
 while True:
-    print('Enter the name of cat ' + str(len(cat_names) + 1) +
-      ' (Or enter nothing to stop.):')
+    print('Enter the name of cat ' + str(len(cat_names) + 1) + ' (Or enter nothing to stop.):')
     name = input()
     if name == '':
         break
@@ -75,7 +75,7 @@ if inp in pet_name:
 else:
     print('i dont have ' , inp , 'named pet')
 
---------or-------
+--------not-------
 
 pet_name = ['a', 'b', 'c', 'd']
 
@@ -153,7 +153,7 @@ number.sort() => [-7, 1, 2, 3.14, 5]
 
 # [Z-A, 9-0] #
 spam = ['Ants', 'Cats', 'Dogs', 'Badgers', 'Elephants']
-    spam.sort(reverse = True) => ['you', 'how', 'how', 'helo', 'hai', 'are']
+spam.sort(reverse = True)  #['Elephants', 'Dogs', 'Cats', 'Badgers', 'Ants']#
 
 number = [2, 5, 3.14, 1, -7]
 number.sort(reverse = True) => [5, 3.14, 2, 1, -7]
@@ -169,7 +169,6 @@ reverse the list indexes
 ----------------------
 spam = ['cat', 'dog', 'moose']
 spam.reverse() => # ['moose', 'dog', 'cat']
-
 
 Sequences
 =========
@@ -226,3 +225,5 @@ cheese = copy.copy(spam)
 cheese [1] = 32432
 print(spam)
 print(cheese)
+#['helo', 'hai', 'how']#
+#['helo', 32432, 'how']#

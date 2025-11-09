@@ -45,7 +45,7 @@ for i in spam.items():
 ('color', 'red')
 ('age', 42)
 
-converts the dictionary to items
+converts the dictionary to list
 -------------------------------
 spam = {'color': 'red', 'age': '42'}
 for k,v in spam.items():
@@ -58,14 +58,14 @@ print(type(vl))
 <class 'list'>
 
 "can't use list as a key. but can do tuple data, it always constant"
---------------------------------------------------------------
+--------------------------------------------------------------------
 grades = {
     ('Alice', 'Math'): 85,
     ('Alice', 'Science'): 92,
     ('Bob', 'Math'): 78,
     ('Bob', 'Science'): 88
 }
-print(grades['Alice', 'Science'])
+print(grades['Alice', 'Science']) #"only return 85"
 
 setdefault value
 ================
@@ -79,7 +79,7 @@ print('I am bringing ' + str(picnic_items.get('eggs', 0)) + ' eggs.')
 
 default value for a key
 -----------------------
-"can set default value of a key. once set the default key can't change to another default value. but we can change the value."
+"can set default value for keys. once set the default key can't change to another default value. but we can change the value."
 spam = {'name': 'Pooka', 'age': 5}
 spam.setdefault('color','black')
 #{'name': 'Pooka', 'age': 5, 'color': 'black'}#

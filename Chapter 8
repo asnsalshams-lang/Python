@@ -1,0 +1,45 @@
+Strings
+=======
+greeting = 'Hello, world!'
+print(greeting[0]) # H
+
+greeting = 'Hello, world!'
+greeting_slice = greeting[0:5] # Hello
+
+in and not in:
+--------------
+greeting = 'Hello, world!'
+if H in greeting:
+   print ('H in greeting') # H in greeting (case sesitive)
+
+f strings
+---------
+k = 'kay'
+b = 10
+print(f'helo {k} how are you? he was {b} years old. now he is {b+10} years old') #helo kay how are you? he was 10 years old. now he is 20 years old
+f'{name}'
+print (f'{{name}}') # {name} will take the {} as string
+
+f alternatives
+-------------
+name = 'Al'
+age = 4000
+print( '{1} years ago, {0} was born and named {0}.'.format(name, age)) #'4000 years ago, Al was born and named Al.'
+
+changing case
+-------------
+spam = 'Hello, world!'
+spam = spam.upper() # 'HELLO, WORLD!'
+spam = spam.lower() # 'hello, world!'
+if spam.lower() == 'great':
+    print('I feel great too.')
+GREat
+I feel great too. (also takes as lower)
+
+Checking String Characteristics
+-------------------------------
+isalpha() Returns True if the string consists only of letters and isn’t blank
+isalnum() Returns True if the string consists only of letters and numbers (alphanumerics) and isn’t blank
+isdecimal() Returns True if the string consists only of numeric characters and isn’t blank
+isspace() Returns True if the string consists only of spaces, tabs, and newlines and isn’t blank
+istitle() Returns True if the string consists only of words that begin with an uppercase letter followed by only lowercase letters

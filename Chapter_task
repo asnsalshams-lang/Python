@@ -26,3 +26,21 @@ for experiment_number in range(1000):
 print(streak)
 number_of_streak = len(streak)
 print('Chance of streak: %s%%' % (number_of_streak / 100))
+
+Chapter8
+========
+Checking String Characteristics
+-------------------------------
+while True:
+    print('Enter your age:')
+    age = input()
+    if age.isdecimal():
+        break
+    print('Please enter a number for your age.')
+
+while True:
+    print('Select a new password (letters and numbers only):')
+    password = input()
+    if password.isalnum():
+        break
+    print('Passwords can only have letters and numbers.')

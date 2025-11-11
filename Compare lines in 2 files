@@ -1,0 +1,15 @@
+Bandit 17-18
++------------+
+file1 = []
+with open("password.new.txt") as f:
+    for line in f:
+        file1.append(line.strip())
+
+file2 = []
+with open('password.old.txt') as f:
+    for line in f:
+        file2.append(line.strip())
+
+for line in file1:
+    if line not in file2:
+        print(line)

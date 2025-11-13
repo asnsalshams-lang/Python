@@ -43,3 +43,44 @@ isalnum() Returns True if the string consists only of letters and numbers (alp
 isdecimal() Returns True if the string consists only of numeric characters and isn’t blank
 isspace() Returns True if the string consists only of spaces, tabs, and newlines and isn’t blank
 istitle() Returns True if the string consists only of words that begin with an uppercase letter followed by only lowercase letters
+
+joining and splitting strings
+-----------------------------
+k = 'man is 1'
+j = k.endswith('1')
+print(j) # True
+k = 'man is 1'
+j = k.startswith('1')
+print(j) # False
+""These methods are useful alternatives to the equals operator (==)""
+
+Joining and splitting strings
+-----------------------------
+k = 'man', 'is', '1'
+print('ABC'.join(k)) # manABCisABC1
+
+k = 'man is 1'
+print(k.split()) #['man', 'is', '1']
+
+k = 'maniand imess'
+print(k.split('i')) #['man', 'and ', 'mess']
+
+rjust, ljust & center
+---------------------
+k = 'Hello'
+s = k.rjust(20) "right-justify 'Hello' in a string of total length 20"
+print(s)
+#                 man#
+
+k = "Hello"
+s = k.ljust(20)
+print(s) "left-justify 'Hello' in a string of total length 20"
+#man          #
+
+k = "Hello"
+s = k.ljust(20,'*')
+man****************
+
+k = 'Hello'
+s = k.center(10,'*') #**Hello***
+

@@ -231,7 +231,7 @@ print(cheese)
 print each lists values in each multiline
 ----------------------------------------
 lists = ['Hello ' , 'How are you?', 'Good or bad?']
-text = '\n'.join(lists)
+text = '\n'.join(lists) "can use .join before .join, because .join() is the method that belongs to string"
 print(text)
 ####Result####
 Hello 

@@ -227,3 +227,13 @@ print(spam)
 print(cheese)
 #['helo', 'hai', 'how']#
 #['helo', 32432, 'how']#
+
+print each lists values in each multiline
+----------------------------------------
+lists = ['Hello ' , 'How are you?', 'Good or bad?']
+text = '\n'.join(lists)
+print(text)
+####Result####
+Hello 
+How are you?
+Good or bad?

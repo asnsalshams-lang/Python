@@ -44,3 +44,21 @@ while True:
     if password.isalnum():
         break
     print('Passwords can only have letters and numbers.')
+
+strings
+=======
+
+copy lines and add * in the beginning of each line
+--------------------------------------------------
+import pyperclip
+text = pyperclip.paste()
+lines = text.split('\n')  # This is still ONE STRING, not separate lines\
+
+for i in range(len(lines)):
+    lines[i] = '*' + lines[i]
+
+text = '\n'.join(lines)
+print(text)
+pyperclip.copy(text)
+
+

@@ -1,0 +1,5 @@
+Strings and Lists
+-----------------
+ Method         What it works on      What it returns            Purpose
+.split()         String → List            List             Break apart a string
+.join()          List → String           String            Combine a list into a string

@@ -131,3 +131,63 @@ while True:
     except:
         ('while error, check root')
     
+Custom encoder (1-25)
+=====================
+print('select function \n1.Encode\n2.Decode\n3.Both')
+choice = int(input())
+shift = int(input('enter a shift number (1-25)'))
+text = input ('enter value:')
+
+def encoder(text,shift):
+    result = ''
+    for char in text:
+        if char.isalpha():
+        
+            if char.islower():
+                inp_ord = (ord(char))
+                pos =  inp_ord - 97
+                k = (pos + shift) % 26
+                out = chr(k + 97)
+                result += out
+            
+            elif char.isupper():
+                inp_ord = (ord(char))
+                pos =  inp_ord - 65
+                k = (pos + shift) % 26
+                out = chr(k + 65)
+                result += out
+        else:
+            result += char
+    return result
+    
+def decoder(text,shift):
+    result = ''
+    for char in text:
+        if char.isalpha():
+            if char.islower():
+                inp_ord = (ord(char))
+                pos =  inp_ord - 97
+                k = (pos - shift) % 26
+                out = chr(k + 97)
+                result += out
+            elif char.isupper():
+                inp_ord = (ord(char))
+                pos =  inp_ord - 65
+                k = (pos - shift) % 26
+                out = chr(k + 65)
+                result += out
+        else:
+            result += char
+    return result 
+    
+if choice == 1:
+    result = encoder(text,shift)
+    print(result)
+elif choice == 2:
+    result = decoder(text,shift)
+    print(result)
+elif choice == 3:
+    result_en = encoder(text,shift)
+    result_de = decoder(result_en,shift)
+    print('encoded result:',result_en)
+    print('decoded result:',result_de)

@@ -131,8 +131,11 @@ while True:
     except:
         ('while error, check root')
     
-Custom encoder (1-25)
-=====================
+Strings
+=======
+stage 1 - Custom encoder (1-25)
+-------------------------------
+
 print('select function \n1.Encode\n2.Decode\n3.Both')
 choice = int(input())
 shift = int(input('enter a shift number (1-25)'))
@@ -191,3 +194,49 @@ elif choice == 3:
     result_de = decoder(result_en,shift)
     print('encoded result:',result_en)
     print('decoded result:',result_de)
+
+
+Stage 2 - Base 64
+-----------------
+
+import base64
+
+def encoder(cmd):
+    utf = cmd.encode('utf-8')
+    be = base64.b64encode(utf)
+    re_val = be.decode('utf-8')
+    return re_val
+
+def decoder(cmd):
+    utf = cmd.encode('utf-8')
+    bd = base64.b64decode(utf)
+    re_val = bd.decode('utf-8')
+    return re_val
+
+
+while True:
+    try:
+        print('1.Encode\n2.Decode\n3.Both')
+        choice = int(input('Choice:'))
+        if choice == 1:
+            cmd = input('enter your input:')
+            encd = encoder(cmd)
+            print('Encoded value is:',encd)
+            
+        elif choice == 2:
+            cmd = input('enter your input:')
+            dccd = decoder(cmd)
+            print('Decoded value is:',dccd)
+            
+        elif choice == 3:
+            e_cmd = input('enter your input:')
+            encd = encoder(e_cmd)
+            dccd = decoder(encd)
+            print('Encoded value is:',encd)
+            print('Decoded value is:',dccd)
+
+        else:
+            print('you can try only by 1,2, or  3')
+    except:
+        print('you can try only by 1,2, or  3')
+    

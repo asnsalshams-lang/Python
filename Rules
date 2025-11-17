@@ -3,3 +3,12 @@ Strings and Lists
  Method         What it works on      What it returns            Purpose
 .split()         String → List            List             Break apart a string
 .join()          List → String           String            Combine a list into a string
+
+Bas-64
+======
+Encode 
+------
+"whoami" → .encode('utf-8') → bytes → b64encode() → bytes → .decode('utf-8') → "d2hvYW1p"
+Decode
+------
+"d2hvYW1p" → .encode('utf-8') → bytes → b64decode() → bytes → .decode('utf-8') → "whoami"

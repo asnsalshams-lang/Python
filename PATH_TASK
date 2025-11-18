@@ -240,3 +240,18 @@ while True:
     except:
         print('you can try only by 1,2, or  3')
     
+B2 detection - Check Base64 or not 
+#---------------------------------#
+
+import re
+import base64
+p = "^[A-Za-z0-9+/=]*$" # pattern
+while True:
+    text = input('enter input:')
+    leng = len(text)
+    val = bool(re.match(p,text))
+    if leng % 4 == 0 and (val == True):
+        print(text,'is base64')
+    else:
+        print(text, 'is not base64')
+    

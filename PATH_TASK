@@ -289,3 +289,63 @@ while True:
     print('Encoded and replaced value is:',encd)
     decd = decoder(encd)
     print('decoded value is ',decd)
+
+
+Double layered encoding (base64 and caesar)
+-------------------------------------------
+
+import base64
+
+def encoder(shift, text):
+    result = ''
+    for char in text:
+        if char.isalpha():        
+            if char.islower():
+                inp_ord = (ord(char))
+                pos =  inp_ord - 97
+                k = (pos + shift) % 26
+                out = chr(k + 97)
+                result += out
+            elif char.isupper():
+                inp_ord = (ord(char))
+                pos =  inp_ord - 65
+                k = (pos + shift) % 26
+                out = chr(k + 65)
+                result += out
+        else:
+            result += char
+    utf = result.encode('utf-8')
+    be = base64.b64encode(utf)
+    re_val = be.decode('utf-8')
+    return re_val
+    
+def decoder(text,shift):
+    utf = text.encode('utf-8')
+    bd = base64.b64decode(utf)
+    re_val = bd.decode('utf-8')
+    result = ''
+    for char in re_val:
+        if char.isalpha():
+            if char.islower():
+                inp_ord = (ord(char))
+                pos =  inp_ord - 97
+                k = (pos - shift) % 26
+                out = chr(k + 97)
+                result += out
+            elif char.isupper():
+                inp_ord = (ord(char))
+                pos =  inp_ord - 65
+                k = (pos - shift) % 26
+                out = chr(k + 65)
+                result += out
+        else:
+            result += char
+    return result 
+
+while True:
+    shift = int(input('enter shift count:'))
+    text = input('enter your input:')
+    encd = encoder(shift, text)
+    print('Encoded value is:',encd)
+    decd = decoder(encd, shift)
+    print('decoded value', decd)

@@ -254,4 +254,38 @@ while True:
         print(text,'is base64')
     else:
         print(text, 'is not base64')
-    
+
+Base64 - Simple obfuscation (replace a, c, v)
+---------------------------------------------
+import base64
+
+def encoder(cmd):
+    utf = cmd.encode('utf-8')
+    be = base64.b64encode(utf)
+    re_val = be.decode('utf-8')
+    if 'a' in re_val or 'c' in re_val or 'v' in re_val:
+        replace = re_val.replace('a', '@').replace('c', '!').replace('v', '^')
+        return replace
+    else:
+        return re_val
+
+        
+def decoder(cmd):
+    if '@' in cmd or '!' in cmd or '^' in cmd:
+        replace = cmd.replace('@', 'a').replace('!', 'c').replace('^', 'v')
+        utf = replace.encode('utf-8')
+        bd = base64.b64decode(utf)
+        cmd = bd.decode('utf-8')
+        return cmd
+    else:
+        utf = cmd.encode('utf-8')
+        bd = base64.b64decode(utf)
+        cmd = bd.decode('utf-8')
+        return cmd
+
+while True:
+    cmd = input('enter your input:')
+    encd = encoder(cmd)
+    print('Encoded and replaced value is:',encd)
+    decd = decoder(encd)
+    print('decoded value is ',decd)

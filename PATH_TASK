@@ -349,3 +349,28 @@ while True:
     print('Encoded value is:',encd)
     decd = decoder(encd, shift)
     print('decoded value', decd)
+
+XOR AND Base64 - encryption by XOR and encoding base64
+------------------------------------------------------
+import base64
+
+def encoder(key, text):
+    xor_bytes = bytes([ord(char) ^ key for char in text])
+    enc = base64.b64encode(xor_bytes)
+    utf = enc.decode('utf-8')
+    return utf
+    
+def decoder(key, encd):
+    dec = base64.b64decode(encd)
+    print(dec)
+    xor_bytes = ''.join([chr(byte ^ key) for byte in dec])
+    return xor_bytes
+
+while True:
+    text = input('input:')
+    key = int(input('key length:'))
+    encd = encoder(key, text)
+    decd = decoder(key, encd)
+    print('encrypted xor with base 64 encode:', encd)
+    print('decrypted xor and base64:',decd)
+

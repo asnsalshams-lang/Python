@@ -415,7 +415,7 @@ def multi_layer_obfuscate(text):
     
     # Layer 2: Caesar cipher (shift 13 - ROT13)
     layer2 = ''
-    for char in text:
+    for char in layer1:
         if char.isalpha():
             if char.islower():
                 inp_ord = (ord(char))
@@ -434,17 +434,24 @@ def multi_layer_obfuscate(text):
             layer2 += char
     print(f'Layer 2 (Caesar): {layer2}')
     
-    # Layer 3: Base64
-    utf = layer2.encode('utf-8')
+    # layer 3: XOR encryption
+    key = 25
+    layer3 = bytes([ord(char) ^ key for char in layer2])
+    print(f'Layer 3 (XOR): {layer3}')
+
+    
+    # Layer 4: Base64
+    enc = layer3.decode('utf-8')
+    utf = enc.encode('utf-8')
     be = base64.b64encode(utf)
-    layer3 = be.decode('utf-8')
-    print(f'Layer 3 (Base64): {layer3}')
+    layer4 = be.decode('utf-8')
+    print(f'Layer 4 (Base64): {layer4}')
     
-    # Layer 4: Hex
-    layer4 = layer3.encode().hex()
-    print(f'Layer 4 (Hex): {layer4}')
+    # Layer 5: Hex
+    layer5 = layer4.encode().hex()
+    print(f'Layer 5 (Hex): {layer5}')
     
-    return layer4
+    return layer5
 
 def multi_layer_deobfuscate(obfuscated):
     """Remove all obfuscation layers in reverse order"""
@@ -452,47 +459,57 @@ def multi_layer_deobfuscate(obfuscated):
     
     # Reverse the order
     decd = bytes.fromhex(obfuscated)
-    layer3 = decd.decode('utf-8')
-    print(f'After Hex decode: {layer3}')
+    layer5 = decd.decode('utf-8')
+    print(f'After Hex decode: {layer5}')
     
-    #layer2 = base64_decoder(layer3)
+    #layer4 = base64_decoder(layer4)
     #utf = cmd.encode('utf-8')
-    bd = base64.b64decode(layer3)
-    layer2 = bd.decode('utf-8')
-    print(f'After Base64 decode: {layer2}')
+    layer4 = base64.b64decode(layer5)
+    #layer4 = bd.decode('utf-8')
+    print(f'After Base64 decode: {layer4}')
+    
+    
+    key = 25
+    layer3 = ''.join([chr(byte ^ key) for byte in layer4])
+    print(f'After XOR decryption: {layer3}')
     
     #layer1 = decoder(layer2)  # Use your Caesar decoder!
-    layer1 = ''
-    for char in layer2:
+    
+    layer2 = ''
+    for char in layer3:
         if char.isalpha():
             if char.islower():
                 inp_ord = (ord(char))
                 pos =  inp_ord - 97
                 k = (pos - 13) % 26
                 out = chr(k + 97)
-                layer1 += out
+                layer2 += out
             elif char.isupper():
                 inp_ord = (ord(char))
                 pos =  inp_ord - 65
                 k = (pos - 13) % 26
                 out = chr(k + 65)
-                layer1 += out
+                layer2 += out
         else:
-            layer1 += char
-    print(f'After Caesar decode: {layer1}')
+            layer2 += char
+    print(f'After Caesar decode: {layer2}')
     
-    original = layer1[::-1]  # Reverse the reversal
-    print(f'Original: {original}')
+    #revers layer 1
+    layer1 = layer2[::-1]  # Reverse the reversal
+    print(f'reverse: {layer1}')
     
-    return original
+    return layer1
 
 # Add to menu:
-print('7. Multi-Layer Obfuscate')
-print('8. Multi-Layer Deobfuscate')
-print('9. Multi-Layer Obfuscate and Deobfuscate')
-choice = int(input(':'))
-text = input(':')
-
+while True:
+    choice = int(input('choice:'))
+    if choice.isdigit():
+        print('7. Multi-Layer Obfuscate (APT-style!)')
+        print('8. Multi-Layer Deobfuscate')
+        print('9. Multi-Layer Obfuscate (APT-style!) and Deobfuscate')
+        text = input('command:')
+    else:
+        break
 if choice == 7:
     final = multi_layer_obfuscate(text)
     print(f'\n🔒 FINAL OBFUSCATED: {final}')
@@ -507,7 +524,3 @@ elif choice == 9:
     print('\nThis command is now heavily hidden!')
     original = multi_layer_deobfuscate(final)
     print(f'\n🔓 ORIGINAL COMMAND: {text}') 
-
-#Input: "whoami" 64584a3559673d3d
-#After all layers: [long hex string]
-#Deobfuscate: "whoami" ✅

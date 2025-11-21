@@ -374,3 +374,29 @@ while True:
     print('encrypted xor with base 64 encode:', encd)
     print('decrypted xor and base64:',decd)
 
+strings to hex() encoding
+-------------------------
+
+def encoder(text):
+    encd = text.encode().hex()
+    return encd
+def decoder(text):
+    decd = bytes.fromhex(text)
+    plain = decd.decode('utf-8')
+    return plain
+
+while True:
+    print('choice\n1.Encode\n2.Decode\n3.both')
+    choice = int(input(':'))
+    text = input('text:')
+    if choice == 1:
+        encd = encoder(text)
+        print('hex encoded value is: ',encd)
+    elif choice == 2:
+        plain = decoder(text)
+        print('hex decoded value is: ',plain)
+    elif choice == 3:
+        encd = encoder(text)
+        plain = decoder(encd)
+        print('hex encoded value is: ',encd)
+        print('hex decoded value is: ',plain)

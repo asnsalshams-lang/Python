@@ -293,7 +293,6 @@ while True:
 
 Double layered encoding (base64 and caesar)
 -------------------------------------------
-
 import base64
 
 def encoder(shift, text):
@@ -403,16 +402,16 @@ while True:
 
 Multi-layared obfuscation
 -------------------------
-import base64
+import base64, sys
 
 def multi_layer_obfuscate(text):
     """Apply multiple obfuscation layers like real malware"""
     print('\n--- Applying Obfuscation Layers ---')
-    
+
     # Layer 1: Reverse string
     layer1 = text[::-1]
     print(f'Layer 1 (Reversed): {layer1}')
-    
+
     # Layer 2: Caesar cipher (shift 13 - ROT13)
     layer2 = ''
     for char in layer1:
@@ -423,7 +422,7 @@ def multi_layer_obfuscate(text):
                 k = (pos + 13) % 26
                 out = chr(k + 97)
                 layer2 += out
-            
+
             elif char.isupper():
                 inp_ord = (ord(char))
                 pos =  inp_ord - 65
@@ -433,48 +432,51 @@ def multi_layer_obfuscate(text):
         else:
             layer2 += char
     print(f'Layer 2 (Caesar): {layer2}')
-    
+
     # layer 3: XOR encryption
     key = 25
     layer3 = bytes([ord(char) ^ key for char in layer2])
     print(f'Layer 3 (XOR): {layer3}')
 
-    
+
     # Layer 4: Base64
     enc = layer3.decode('utf-8')
     utf = enc.encode('utf-8')
     be = base64.b64encode(utf)
     layer4 = be.decode('utf-8')
     print(f'Layer 4 (Base64): {layer4}')
-    
+
     # Layer 5: Hex
     layer5 = layer4.encode().hex()
     print(f'Layer 5 (Hex): {layer5}')
-    
     return layer5
 
 def multi_layer_deobfuscate(obfuscated):
     """Remove all obfuscation layers in reverse order"""
     print('\n--- Removing Obfuscation Layers ---')
-    
+
     # Reverse the order
-    decd = bytes.fromhex(obfuscated)
-    layer5 = decd.decode('utf-8')
-    print(f'After Hex decode: {layer5}')
-    
+    try:
+        decd = bytes.fromhex(obfuscated)
+        layer5 = decd.decode('utf-8')
+        print(f'After Hex decode: {layer5}')
+        
+    except ValueError:
+        print('enter a valide  value')
+        return True
+        
     #layer4 = base64_decoder(layer4)
     #utf = cmd.encode('utf-8')
     layer4 = base64.b64decode(layer5)
     #layer4 = bd.decode('utf-8')
     print(f'After Base64 decode: {layer4}')
-    
-    
+
     key = 25
     layer3 = ''.join([chr(byte ^ key) for byte in layer4])
     print(f'After XOR decryption: {layer3}')
-    
+
     #layer1 = decoder(layer2)  # Use your Caesar decoder!
-    
+
     layer2 = ''
     for char in layer3:
         if char.isalpha():
@@ -493,34 +495,76 @@ def multi_layer_deobfuscate(obfuscated):
         else:
             layer2 += char
     print(f'After Caesar decode: {layer2}')
-    
+
     #revers layer 1
     layer1 = layer2[::-1]  # Reverse the reversal
     print(f'reverse: {layer1}')
-    
     return layer1
+    
+def run_choice(choice):
+    
+    if choice == 7:
+        command = input('enter your command:')
+        final = multi_layer_obfuscate(command)
+        print(f'\n🔒 FINAL OBFUSCATED: {final}')
+        print('\nThis command is now heavily hidden!')
+
+        while True:
+            print('1.Main Menu\n0.Quit')
+            select = int(input('option:'))
+            if select == 0:
+                sys.exit()           
+            elif select == 0:
+                print('enter a valid choice')
+                continue
+            else:
+                break
+            
+    elif choice == 8:
+        value = input('enter your value:')
+        original = multi_layer_deobfuscate(value)
+        print(f'\n🔓 ORIGINAL COMMAND: {original}')
+        
+        while True:
+            print('1.menu\n0.Quit')
+            select = int(input('option:'))
+            if select == 0:
+                sys.exit()           
+            elif select == 0:
+                print('enter a valid choice')
+                continue
+            else:
+                break
+        
+    elif choice == 9:
+        command = input('enter your command:')
+        final = multi_layer_obfuscate(command)
+        print(f'\n🔒 FINAL OBFUSCATED: {final}')
+        print('\nThis command is now heavily hidden!')
+        original = multi_layer_deobfuscate(final)
+        print(f'\n🔓 ORIGINAL COMMAND: {command}')
+        while True:
+            print('1.menu\n0.Quit')
+            select = int(input('option:'))
+            if select == 0:
+                sys.exit()           
+            elif select == 0:
+                print('enter a valid choice')
+                continue
+            else:
+                break
 
 # Add to menu:
 while True:
-    choice = int(input('choice:'))
-    if choice.isdigit():
-        print('7. Multi-Layer Obfuscate (APT-style!)')
-        print('8. Multi-Layer Deobfuscate')
-        print('9. Multi-Layer Obfuscate (APT-style!) and Deobfuscate')
-        text = input('command:')
-    else:
-        break
-if choice == 7:
-    final = multi_layer_obfuscate(text)
-    print(f'\n🔒 FINAL OBFUSCATED: {final}')
-    print('\nThis command is now heavily hidden!')
-
-elif choice == 8:
-    original = multi_layer_deobfuscate(text)
-    print(f'\n🔓 ORIGINAL COMMAND: {original}')
-elif choice == 9:
-    final = multi_layer_obfuscate(text)
-    print(f'\n🔒 FINAL OBFUSCATED: {final}')
-    print('\nThis command is now heavily hidden!')
-    original = multi_layer_deobfuscate(final)
-    print(f'\n🔓 ORIGINAL COMMAND: {text}') 
+    print('\n7. Multi-Layer Obfuscate')
+    print('8. Multi-Layer Deobfuscate')
+    print('9. Multi-Layer Obfuscate and Deobfuscate')
+    try:
+        choice = int(input('choice:'))
+        if choice == 7 or choice == 8 or choice == 9:
+            call_choice_runner = run_choice(choice)
+        else:
+            print("Out of choice")
+            continue
+    except ValueError:
+        print('enter a valid choice')

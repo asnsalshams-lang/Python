@@ -1,2 +1,8 @@
 Regex
 =====
+import re
+num = 'my number is 90 897-760-1312'
+regex = re.compile(r'\d{3}-\d{3}-\d{4}') "creaete a regex pattern"
+match = reg.search(num) "search matches from num"
+result = match.group() "taking the result from num to a group"
+print(k)

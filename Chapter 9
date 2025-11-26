@@ -21,7 +21,7 @@ print('group2:', group2)   #group2: 897
 groupig with parenthesis expression ()
 --------------------------------------
 text =  'my number is (901)897-760-1312'
-pattern = re.compile(r'(\(\d\d\d\))(\d\d\d)')
+pattern = re.compile(r'(\(\d\d\d\))(\d\d\d)')   "take a look at this pattern'(\(\d\d\d\)'"
 match = pattern.search(text)
 group1 = match.group(1)
 group2 = match.group(2)

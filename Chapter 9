@@ -27,3 +27,11 @@ group1 = match.group(1)
 group2 = match.group(2)
 print('group1:', group1) #group1: (901)
 print('group2:', group2) #group2: 897
+
+match by by pipe | 
+------------------
+"will check the text contain any keywords from regex, but it will check multiple option like OR"
+pattern = re.compile(r'he(lo|no|do)') "will flag if any keyword match he+lo or he+no or he+do"
+match = pattern.search('edslfhelosdjflsd hel part hedoneeb lo (23)')
+group = match.group()
+print(group) #helo

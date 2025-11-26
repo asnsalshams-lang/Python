@@ -35,3 +35,4 @@ pattern = re.compile(r'he(lo|no|do)') "will flag if any keyword match he+lo or h
 match = pattern.search('edslfhelosdjflsd hel part hedoneeb lo (23)')
 group = match.group()
 print(group) #helo
+print(match.group(1)) #lo "print which text is mathed with 'he'. in this example 'lo'"

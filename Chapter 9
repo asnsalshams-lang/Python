@@ -2,7 +2,28 @@ Regex
 =====
 import re
 num = 'my number is 90 897-760-1312'
-regex = re.compile(r'\d{3}-\d{3}-\d{4}') "creaete a regex pattern" | /d (decimal value 0-9)
-match = reg.search(num) "search matches from num"
+pattern = re.compile(r'\d{3}-\d{3}-\d{4}') "creaete a regex pattern" | /d (decimal value 0-9)
+match = pattern.search(num) "search matches from num"
 result = match.group() "taking the result from num to a group"
 print(k)
+
+
+mulitple groups
+----------------
+text =  'my number is 90 897-760-1312'
+pattern = re.compile(r'(\d\d) (\d\d\d)')
+match = pattern.search(text)
+group1 = match.group(1)
+group2 = match.group(2)
+print('group1:', group1)   #group1: 90
+print('group2:', group2)   #group2: 897
+
+groupig with parenthesis expression ()
+--------------------------------------
+text =  'my number is (901)897-760-1312'
+pattern = re.compile(r'(\(\d\d\d\))(\d\d\d)')
+match = pattern.search(text)
+group1 = match.group(1)
+group2 = match.group(2)
+print('group1:', group1) #group1: (901)
+print('group2:', group2) #group2: 897

@@ -134,3 +134,15 @@ text = '4!'
 pattern = re.compile(r'42?!') "match the regesx to the text. 2 is optional. ! is mandatory"
 match = pattern.search(text)
 print(match)#4!
+
+Optional in Group()
+-------------------
+text = '999-234-345-123'
+text2 = '234-345-123'
+pattern = re.compile(r'(\d{3}-)?\d{3}-\d{3}-\d{3}')
+match = pattern.search(text)
+print(match) #<re.Match object; span=(0, 15), match='999-234-345-123'>
+
+match2 = pattern.search(text2)
+print(match2) #<re.Match object; span=(0, 11), match='234-345-123'> "first group 999 is optional"
+

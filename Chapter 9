@@ -150,3 +150,14 @@ Matcing Zero or above by *
 pattern = re.compile('Eggs( spam)*') "Eggs are must at one time no more. But spam is unlimitted 0-n because of the *"
 matach2 = pattern.search('Eggs spam spam spam Eggs spam spam')
 print(matach2) #<re.Match object; span=(0, 19), match='Eggs spam spam spam'>
+
+Matchin 1 or above by +
+-----------------------
+pattern = re.compile('Eggs( spam)+')
+matach = pattern.search('Eggs')
+print(matach) #None "Because it must contain atleast one or more regex pattern match"
+
+pattern = re.compile('Eggs( spam)+')
+matach = pattern.search('Eggs spam')
+print(matach) #<re.Match object; span=(0, 9), match='Eggs spam'> #Matched regex pattern
+

@@ -129,3 +129,8 @@ text = '42Gew'
 pattern = re.compile(r'42G!?') '!'is an optional
 match = pattern.search(text)
 print(match)#<re.Match object; span=(0, 3), match='42G'> 
+
+text = '4!'
+pattern = re.compile(r'42?!') "match the regesx to the text. 2 is optional. ! is mandatory"
+match = pattern.search(text)
+print(match)#4!

@@ -67,3 +67,10 @@ text = 'Catch me, If you can'
 pattern = re.compile('[catchmeiyouCatcme]') #will find the Upper and lower cahr as mentioned in this regex Pattern. eg: Catch me will take, because it Upper and lower already mentioned in tegex. but teh Find won't take the Upper. because the Upper 'I' didn't mention in regex/
 match = pattern.findall(text)
 print(match) #['C', 'a', 't', 'c', 'h', 'm', 'e', 'y', 'o', 'u', 'c', 'a'] "will take all char in single index"
+
+Caret^ char for umatched char
+-----------------------------
+text = 'Catch me If you can'
+pattern = re.compile('[^catchmeiyouCatcme]')
+match = pattern.findall(text)
+print(match) #[' ', ' ', 'I', 'f', ' ', ' ', 'n'] "will print the , as usual"

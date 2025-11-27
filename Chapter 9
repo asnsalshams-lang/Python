@@ -179,6 +179,17 @@ pattern = re.compile('(Ha){,3}') "can print HaHaHa or HaHa or Ha. its equals to 
 
 pattern = re.compile('(Ha){3,5}') "Will take between 3-5 Ha, its like range"
 
+Matching by greedy and non-greedy *?
+------------------------------------
+
+text = '<To serve man> for dinner.><helo>'
+pattern = re.compile(r'(<.*>)') "Matches everythin because of the star'*'"
+match = pattern.search(text)
+print(text) #<To serve man> for dinner.><helo>
+
+pattern = re.compile(r'(<.*?>)') "Matches minimum of text, because of the '?'"
+match = pattern.search(text)
+print(text) #<re.Match object; span=(0, 14), match='<To serve man>'>
 
 
 

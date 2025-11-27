@@ -105,3 +105,9 @@ pattern = re.compile(r'\d+\s\w+') "1.must 1 or more digits in starting, 2.must b
 match = pattern.findall(text)
 print(match) #['11 pipers', '10 lords', '9 ladies', '8 maids', '6 geese', '4 birds', '3 hens', '2 doves', '1 partridge'] "won't give 12 -drummers, 7swans,   rings in result "
 
+Matching by dot.
+----------------
+text = 'The cat is walking, Man is running'
+pattern = re.compile(r'i.') will check the i contain char, if match will take the i+next char eg:'is, in'
+match = pattern.findall(text)
+print(match) #['is', 'in', 'is', 'in']

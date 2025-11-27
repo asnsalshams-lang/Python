@@ -43,3 +43,10 @@ text = 'Catch me if you can'
 pattern = re.compile('helo|you|Catch')
 match = pattern.findall(text)
 print(match) #['Catch', 'you']
+
+strings in tuple Goup
+---------------------
+text = 'Cell: 415 555 9999 Work: 212 555 0000'
+pattern = re.compile('(\d{3}) (\d{3}) (\d{4})') will take 1st and 2nd numbers as reget match
+match = pattern.findall(text)
+print(match) #[('415', '555', '9999'), ('212', '555', '0000')]

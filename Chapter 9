@@ -161,6 +161,12 @@ pattern = re.compile('Eggs( spam)+')
 matach = pattern.search('Eggs spam')
 print(matach) #<re.Match object; span=(0, 9), match='Eggs spam'> "Matched regex pattern"
 
+Non-Greedy matches ?
+--------------------
+pattern = re.compile('(Ha){3,5}?')
+matach = pattern.search('HaHaHaHaHa')
+print(matach) #<re.Match object; span=(0, 6), match='HaHaHa'> "will only prints only 3. Because the ? is lazy. it will only take minimum of match search. In this example its '3'"
+
 Match one or more by {}
 ----------------------
 pattern = re.compile('(Ha){3}')
@@ -172,5 +178,7 @@ pattern = re.compile('(Ha){3,}') "will print 3-n. not limit. but should be more 
 pattern = re.compile('(Ha){,3}') "can print HaHaHa or HaHa or Ha. its equals to <=3"
 
 pattern = re.compile('(Ha){3,5}') "Will take between 3-5 Ha, its like range"
+
+
 
 

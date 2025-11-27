@@ -60,3 +60,10 @@ print(match) #273. 'only prints matched char'
 pattern = re.compile(r'\d{3}')
 match = pattern.findall('273640')
 print(match) #['273', '640'] "will match 2 strings in a single group, it matches 3x2 char. 'findall()will print all results, group cannot do this function.'"
+
+Match upper & lower
+-------------------
+text = 'Catch me, If you can'
+pattern = re.compile('[catchmeiyouCatcme]') #will find the Upper and lower cahr as mentioned in this regex Pattern. eg: Catch me will take, because it Upper and lower already mentioned in tegex. but teh Find won't take the Upper. because the Upper 'I' didn't mention in regex/
+match = pattern.findall(text)
+print(match) #['C', 'a', 't', 'c', 'h', 'm', 'e', 'y', 'o', 'u', 'c', 'a'] "will take all char in single index"

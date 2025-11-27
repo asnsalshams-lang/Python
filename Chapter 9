@@ -7,7 +7,6 @@ match = pattern.search(num) "search matches from num"
 result = match.group() "taking the result from num to a group"
 print(k)
 
-
 mulitple groups
 ----------------
 text =  'my number is 90 897-760-1312'

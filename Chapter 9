@@ -159,5 +159,18 @@ print(matach) #None "Because it must contain atleast one or more regex pattern m
 
 pattern = re.compile('Eggs( spam)+')
 matach = pattern.search('Eggs spam')
-print(matach) #<re.Match object; span=(0, 9), match='Eggs spam'> #Matched regex pattern
+print(matach) #<re.Match object; span=(0, 9), match='Eggs spam'> "Matched regex pattern"
+
+Match one or more by {}
+----------------------
+pattern = re.compile('(Ha){3}')
+matach = pattern.search('HaHaHaHa')
+print(matach)#HaHaHa "will print HaHaHa not HaHaHaHa. and wont take pattern.search(HaHa). becuase 3 is fixed in regex"
+
+pattern = re.compile('(Ha){3,}') "will print 3-n. not limit. but should be more than 3. its equals >=3"
+
+pattern = re.compile('(Ha){,3}') "can print HaHaHa or HaHa or Ha. its equals to <=3"
+
+pattern = re.compile('(Ha){3,5}') "Will take between 3-5 Ha, its like range"
+
 

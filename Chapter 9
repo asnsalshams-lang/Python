@@ -235,3 +235,11 @@ Case-Insensitve
 text = 'Robocop'
 pattern = re.compile(r'robocop',re.I) "re.I will take all cahrector not matter the text is lower or Upper"
 match = pattern.search(text)
+
+Substitution strings
+--------------------
+text = 'system LHK010 successfully connected to system MLH112'
+pattern = re.compile(r'system (\w{2})\w*') "take first 2 char as in a group. then allow to swallow the pending w chars"
+masked = pattern.sub(r'system \1***', text) "sub - repaces by given char. r'system - keeps as same, \1**** - takes first group from pattern(\w{2})and concatenate with ****. take the text as value"
+print(masked) #system L***H successfully connected to system M***L
+

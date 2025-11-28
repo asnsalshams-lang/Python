@@ -191,5 +191,10 @@ pattern = re.compile(r'(<.*?>)') "Matches minimum of text, because of the '?'"
 match = pattern.search(text)
 print(text) #<re.Match object; span=(0, 14), match='<To serve man>'>
 
-
+Multiple lines into singleline - DOALL
+--------------------------------------
+text = 'To serve man> for dinner.\nhelo how are you?'
+pattern = re.compile(r'.*',re.DOTALL) "By passing re.DOALL as secend arguement in regex, it will take the multilines into single line"
+match = pattern.search(text)
+print(match) #<re.Match object; span=(0, 43), match='To serve man> for dinner.\nhelo how are you?'>
 

@@ -85,7 +85,7 @@ Any numeric digit from 0 to 9.
 Any character that is not a numeric digit from 0 to 9.
 
 \w
-Any letter, numeric digit, or the underscore character. (Think of this as matching “word” characters.)
+Any letter, numeric digit, or the underscore character. (Think of this as matching “word” characters, _ , numbers.)
 
 \W
 Any character that is not a letter, numeric digit, or the underscore character.
@@ -110,7 +110,7 @@ pattern = re.compile(r'i.') "will check the i contain char, if match will take t
 match = pattern.findall(text)
 print(match) #['is', 'in', 'is', 'in']
 
-pattern = re.compile(r'.i') "will check the i contain char, if match will take the before+i char eg:' i,ki'"
+pattern = re.compile(r'.i') "will check the i contain char, if match will take the before+i char eg:' i,ki' will also take the space"
 #[' i', 'ki', ' i', 'ni']
 
 pattern = re.compile(r'.i.') "will check the i contain char, if match will take the before+i+after char eg:' is,kin'"
@@ -129,7 +129,7 @@ match = pattern.search(text)
 print(match)#<re.Match object; span=(0, 3), match='42G'> 
 
 text = '4!'
-pattern = re.compile(r'42?!') "match the regesx to the text. 2 is optional. ! is mandatory"
+pattern = re.compile(r'42?!') "match the regesx to the text. 2 is optional. 4 an ! is mandatory"
 match = pattern.search(text)
 print(match)#4!
 
@@ -146,9 +146,9 @@ print(match2) #<re.Match object; span=(0, 11), match='234-345-123'> "first group
 
 Matcing Zero or above by *
 --------------------------
-pattern = re.compile('Eggs( spam)*') "Eggs are must at one time no more. But spam is unlimitted 0-n because of the *"
+pattern = re.compile('Eggs( spam)*') "Eggs are must at one time, no more. But spam is unlimitted 0-n because of the *"
 matach2 = pattern.search('Eggs spam spam spam Eggs spam spam')
-print(matach2) #<re.Match object; span=(0, 19), match='Eggs spam spam spam'>
+print(matach2) #<re.Match object; span=(0, 19), match='Eggs spam spam spam, will brake from 2nd Eggs'>
 
 Matchin 1 or above by +
 -----------------------

@@ -197,3 +197,13 @@ pattern = re.compile(r'.*',re.DOTALL) "By passing re.DOALL as secend arguement i
 match = pattern.search(text)
 print(match) #<re.Match object; span=(0, 43), match='To serve man> for dinner.\nhelo how are you?'>
 
+Beginning with Ending with
+--------------------------
+text = 'The port 25 is open now'
+pattern = re.compile(r'^T.*') "Must begin with 'T'. Otherwise it will return None"
+match = pattern.search(text)
+print(match) #<re.Match object; span=(0, 23), match='The port 25 is open now'>
+
+pattern = re.compile(r'.*w$') "Must end with 'w'. Otherwise it return None"
+match = pattern.search(text)
+print(match) #<re.Match object; span=(0, 23), match='The port 25 is open now'>

@@ -230,3 +230,8 @@ print(match) #['caterpiller', 'catoos'] "won't take the mangocatacom, because be
     [^abc] matches any character that isn’t between the square brackets.
     (Hello) groups 'Hello' together as a single qualifier.
 
+Case-Insensitve
+---------------
+text = 'Robocop'
+pattern = re.compile(r'robocop',re.I) "re.I will take all cahrector not matter the text is lower or Upper"
+match = pattern.search(text)
